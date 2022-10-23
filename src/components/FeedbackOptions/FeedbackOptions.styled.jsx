@@ -6,11 +6,15 @@ export const ButtonBarStyled = styled.div`
 `;
 
 export const StyledButton = styled.button`
+  width: 100px;
+  height: 40px;
+
   padding: 5px 10px;
-  background-color: white;
-  border: 1px solid grey;
+  font-size: 20px;
+  background-color: #459dbd;
+  color: white;
+  border: none;
   border-radius: 4px;
-  box-shadow: 0 0 1px 1px rgba(221, 221, 221, 1);
   cursor: pointer;
 
   &:not(:last-child) {

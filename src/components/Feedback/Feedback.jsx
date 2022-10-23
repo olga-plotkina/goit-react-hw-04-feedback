@@ -16,21 +16,9 @@ export class Feedback extends React.Component {
     this.setState({ visible: true });
   };
 
-  handleGoodButton = () => {
+  handleButton = option => {
     this.setState(prevState => {
-      return { good: prevState.good + 1, visible: true };
-    });
-  };
-
-  handleNeutralButton = () => {
-    this.setState(prevState => {
-      return { neutral: prevState.neutral + 1, visible: true };
-    });
-  };
-
-  handleBadButton = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1, visible: true };
+      return { [option]: prevState[option] + 1, visible: true };
     });
   };
 
@@ -50,9 +38,8 @@ export class Feedback extends React.Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onGoodBtn={this.handleGoodButton}
-            onNeutralbtn={this.handleNeutralButton}
-            onBadBtn={this.handleBadButton}
+            options={['good', 'bad', 'neutral']}
+            onLeaveFeedback={this.handleButton}
           />
         </Section>
         <Section title="Statistic">

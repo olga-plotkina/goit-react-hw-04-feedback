@@ -1,15 +1,13 @@
 import { StyledButton, ButtonBarStyled } from './FeedbackOptions.styled';
 
-export const FeedbackOptions = ({ onGoodBtn, onNeutralbtn, onBadBtn }) => (
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <ButtonBarStyled>
-    <StyledButton type="button" onClick={onGoodBtn}>
-      Good
-    </StyledButton>
-    <StyledButton type="button" onClick={onNeutralbtn}>
-      Neutral
-    </StyledButton>
-    <StyledButton type="button" onClick={onBadBtn}>
-      Bad
-    </StyledButton>
+    {options.map(option => {
+      return (
+        <StyledButton type="button" onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </StyledButton>
+      );
+    })}
   </ButtonBarStyled>
 );

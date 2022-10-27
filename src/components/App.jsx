@@ -55,10 +55,9 @@ export class App extends React.Component {
           />
         </Section>
         <Section title="Statistic">
-          {!this.countTotalFeedback() && (
+          {!this.countTotalFeedback() ? (
             <Notification message="There is no feedback" />
-          )}
-          {this.countTotalFeedback() && (
+          ) : (
             <Statistic
               good={this.state.good}
               neutral={this.state.neutral}

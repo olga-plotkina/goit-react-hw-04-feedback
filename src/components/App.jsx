@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { Statistic } from 'components/Statistic/Statistic';
 import React from 'react';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
@@ -7,17 +5,6 @@ import { Section } from 'components/Section/Section';
 import { Notification } from 'components/Notification/Notification';
 
 export class App extends React.Component {
-  static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.string),
-    onLeaveFeedback: PropTypes.func,
-    title: PropTypes.string,
-    message: PropTypes.string,
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-    total: PropTypes.func,
-    positivePercentage: PropTypes.func,
-  };
   state = {
     good: 0,
     neutral: 0,

@@ -9,7 +9,7 @@ export function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const state = ['good', 'neutral', 'bad'];
+  const feedbackOptions = ['good', 'neutral', 'bad'];
 
   const handleLeaveFeedbackButton = option => {
     if (option === 'good') {
@@ -40,7 +40,7 @@ export function App() {
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={state}
+          options={feedbackOptions}
           onLeaveFeedback={handleLeaveFeedbackButton}
         />
       </Section>
